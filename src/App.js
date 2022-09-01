@@ -1,31 +1,17 @@
 import React from "react";
-import './App.css';
-import Work from "./components/Work";
-import HomeMade from "./components/HomeMade";
-import HappyCooking from "./components/HappyCooking";
-import SimplifyCooking from './components/SimplifyCooking';
-import CookingComunity from './components/CookingComunity';
-import Download from "./components/Download"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
+import "./App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Steps from "./components/Steps";
 
 function App() {
-
-  const [imgDimen, setImgDimen] = React.useState({ height: '', width: '' });
-
   return (
     <div className="App">
       <Header />
-      <Work />
-      <HappyCooking />
-      <SimplifyCooking imgDimen={imgDimen} />
-      <HomeMade setImgDimen={setImgDimen} imgDimen={imgDimen} />
-      <CookingComunity />
-      <Download />
+      <Steps />
       <Footer />
     </div>
   );
 }
 
 export default App;
-

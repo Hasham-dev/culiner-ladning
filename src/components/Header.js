@@ -18,7 +18,6 @@ const Header = () => {
         <Navbar />
         <Hero />
       </header>
-      <img className="header-img2" src={HeaderImage} alt="Header " />
     </div>
   );
 };

@@ -24,65 +24,27 @@ const Hero = () => {
             item
             xs={12}
             sm={12}
-            md={7}
+            md={12}
             className="col-flex"
             position="relative"
-            sx={{ alignItems: "left" }}
+            sx={{ alignItems: "center", height: { xs: "250px", md: "725px" } }}
           >
-            <Box component="div" sx={{ textAlign: { xs: "left" } }}>
+            <Box component="div" sx={{ textAlign: { xs: "center" } }}>
               <Typography
                 className="h1 font-h"
                 variant="h1"
                 component="div"
                 sx={{
                   color: "#FFF",
-                  fontSize: { xs: "2rm", md: "4.5rem" },
+                  fontSize: { xs: "2rm", md: "32rpx" },
                   mb: "1rem",
                 }}
               >
-                The Ultimate Cooking
+                Welcome to the Culineer
                 <br />
-                Community
+                Community!
               </Typography>
-              <p variant="p" className="font-p hero-p">
-                Save, organize and shop recipes. Find local farmers. Connect
-                with other home cooks like you!
-              </p>
-              {/* <Box component="div" display="flex" marginTop="1rem" sx={{ justifyContent: { xs:'center', md: 'left' } }}>*/}
-              <Button
-                sx={{
-                  maxWidth: "150px",
-                  textTransform: "capitalize",
-                  mt: "2rem",
-                  backgroundColor: primColor,
-                  borderRadius: "22px",
-                  border: `2px solid ${primColor}`,
-                  fontWeight: 600,
-                  color: "#FFF",
-                  p: "0.7rem 1.5rem",
-                  "&:hover": {
-                    // opacity: 0.7,
-                    backgroundColor: "rgba(250, 250, 250, 0.1)",
-                    border: `2px solid ${primColor}`,
-                    color: primColor,
-                  },
-                }}
-              >
-                Subscribe
-              </Button>
             </Box>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={5}
-            sx={{
-              pt: "0",
-              textAlign: { xs: "center", md: "right", lg: "center" },
-            }}
-          >
-            <img className="header-img1" src={HeaderImage} alt="Header " />
           </Grid>
         </Grid>
       </Box>

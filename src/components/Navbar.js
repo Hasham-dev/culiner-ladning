@@ -24,6 +24,10 @@ const Navbar = (props) => {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleLogin = () => {
+    window.location.replace("https:culineer.net");
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <img
@@ -78,8 +82,9 @@ const Navbar = (props) => {
             {navItems.map((item) => (
               <Button
                 className="font-p"
+                onClick={item === "LOGIN" && handleLogin}
                 key={item}
-                sx={{ color: "#000", fontWeight: "600", mr: "10px" }}
+                sx={{ color: "#FFFFFF", fontWeight: "600", mr: "10px" }}
               >
                 {item}
               </Button>
