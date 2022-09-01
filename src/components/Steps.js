@@ -41,14 +41,14 @@ const Steps = () => {
           md={4}
           sx={{
             textAlign: { xs: "center" },
-            // maxHeight: "400px",
+            maxWidth: { md: "408px", xs: "100%" },
             overflow: "hidden",
           }}
         >
           <img
             className="header-img"
             src={HeaderImage}
-            style={{ width: "408px" }}
+            style={{ width: "100%" }}
             alt="Header "
           />
         </Grid>
