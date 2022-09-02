@@ -17,6 +17,14 @@ const Header = () => {
       >
         <Navbar />
         <Hero />
+        <div class="arrow_container">
+          <a href="#toscroll">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <span class="text">Scroll down</span>
+          </a>
+        </div>
       </header>
     </div>
   );
