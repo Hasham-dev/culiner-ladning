@@ -14,8 +14,14 @@ import downloadIcon from "../assets/download-icon.png";
 import GooglePlay from "../assets/google.png";
 import ApplePlay from "../assets/apple.png";
 import Arrow from "../assets/arrow-line.png";
+import { useNavigate } from "react-router-dom";
 
 const Steps = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("login", { replace: true });
+  };
   return (
     <Box
       sx={{
@@ -34,7 +40,7 @@ const Steps = () => {
           Here are the next steps:
         </Typography>
       </Box>
-      <Grid container spacing={2} paddingTop={2}>
+      <Grid container spacing={2}>
         <Grid
           item
           xs={12}
@@ -52,7 +58,7 @@ const Steps = () => {
             alt="Header "
           />
         </Grid>
-        <Grid marginBottom={12} item xs={12} md={8}>
+        <Grid marginBottom={5} item xs={12} md={8}>
           <Box
             sx={{
               height: "100%",
@@ -110,23 +116,34 @@ const Steps = () => {
               component="div"
               sx={{
                 display: "flex",
-                justifyContent: { xs: "space-around", md: "flex-start" },
+                gap: "5px",
+                justifyContent: { xs: "flex-start", md: "flex-start" },
               }}
             >
-              <Button sx={{ p: "0", ml: "1rem", width: { xs: "171px" } }}>
-                <img
-                  src={ApplePlay}
-                  alt="Apple Play"
-                  style={{ width: "100%" }}
-                />
-              </Button>
-              <Button sx={{ p: "0", width: { xs: "171" } }}>
-                <img
-                  src={GooglePlay}
-                  alt="Google Play"
-                  style={{ width: "100%" }}
-                />
-              </Button>
+              <a href="https:culineer.app">
+                <Button
+                  sx={{
+                    p: "0",
+                    ml: { xs: "0", md: "1rem" },
+                    width: { xs: "171px" },
+                  }}
+                >
+                  <img
+                    src={ApplePlay}
+                    alt="Apple Play"
+                    style={{ width: "100%" }}
+                  />
+                </Button>
+              </a>
+              <a href="https:culineer.app">
+                <Button sx={{ p: "0", width: { xs: "171px" } }}>
+                  <img
+                    src={GooglePlay}
+                    alt="Google Play"
+                    style={{ width: "100%" }}
+                  />
+                </Button>
+              </a>
             </Box>
           </Box>
         </Grid>
@@ -134,7 +151,7 @@ const Steps = () => {
 
       {/* Section 2 */}
       <Grid
-        marginBottom={12}
+        // marginBottom={5}
         sx={{
           height: "100%",
           justifyContent: "flex-start",
@@ -144,7 +161,6 @@ const Steps = () => {
         }}
         container
         spacing={2}
-        paddingTop={5}
       >
         <Grid item xs={12} md={6}>
           <Box
@@ -189,6 +205,7 @@ const Steps = () => {
                 backgroundColor: "#85C34A",
                 borderRadius: "50px",
                 p: "18px 0rem",
+                m: { xs: "0 0 0 16vw", md: "0" },
                 "&:hover": {
                   opacity: 0.8,
                   // color: '#000',
@@ -224,13 +241,13 @@ const Steps = () => {
       </Grid>
 
       {/* Section 3 */}
-      <Grid container spacing={4} paddingTop={5}>
+      <Grid container spacing={4}>
         <Grid
           item
           xs={12}
           md={5}
           sx={{
-            // maxHeight: "400px",
+            m: { xs: "30px 0 0 0", md: "0" },
             overflow: "hidden",
           }}
         >
@@ -298,24 +315,28 @@ const Steps = () => {
               To make it easy to add and manage your recipe content we also have
               limited feature website
             </Typography>
-            <Button
-              className="font-p"
-              sx={{
-                textTransform: "capitalize",
-                letterSpacing: "2px",
-                color: "#FFF",
-                backgroundColor: "#85C34A",
-                borderRadius: "50px",
-                p: "18px 32px",
-                "&:hover": {
-                  opacity: 0.8,
-                  // color: '#000',
+            <a href={"https:culineer.net"}>
+              <Button
+                className="font-p"
+                onClick={handleNavigate}
+                sx={{
+                  textTransform: "capitalize",
+                  letterSpacing: "2px",
+                  textDecoration: "none",
+                  color: "#FFF",
                   backgroundColor: "#85C34A",
-                },
-              }}
-            >
-              LOG IN
-            </Button>
+                  borderRadius: "50px",
+                  p: "18px 32px",
+                  "&:hover": {
+                    opacity: 0.8,
+                    // color: '#000',
+                    backgroundColor: "#85C34A",
+                  },
+                }}
+              >
+                LOG IN
+              </Button>
+            </a>
           </Box>
         </Grid>
       </Grid>

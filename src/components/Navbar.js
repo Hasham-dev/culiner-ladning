@@ -12,9 +12,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["FOR HOMECOOKS", "FOR FARMERS", "LOGIN"];
+const navItems = [
+  { label: "FOR HOMECOOKS", link: "/" },
+  { label: "FOR FARMERS", link: "/" },
+  { label: "LOGIN", link: "https://culineer.net/" },
+];
 
 const Navbar = (props) => {
   const { window } = props;
@@ -22,10 +27,6 @@ const Navbar = (props) => {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-  };
-
-  const handleLogin = () => {
-    window.location.replace("https:culineer.net");
   };
 
   const drawer = (
@@ -38,12 +39,14 @@ const Navbar = (props) => {
       />
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+        {navItems.map(({ label, link }) => (
+          <a href={link}>
+            <ListItem key={label} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={label} />
+              </ListItemButton>
+            </ListItem>
+          </a>
         ))}
       </List>
     </Box>
@@ -79,15 +82,16 @@ const Navbar = (props) => {
             <MenuIcon />
           </IconButton>
           <Box sx={{ display: { xs: "none", sm: "block" }, ml: "auto" }}>
-            {navItems.map((item) => (
-              <Button
-                className="font-p"
-                onClick={item === "LOGIN" && handleLogin}
-                key={item}
-                sx={{ color: "#FFFFFF", fontWeight: "600", mr: "10px" }}
-              >
-                {item}
-              </Button>
+            {navItems.map(({ label, link }) => (
+              <a href={link}>
+                <Button
+                  className="font-p"
+                  key={label}
+                  sx={{ color: "#FFFFFF", fontWeight: "600", mr: "10px" }}
+                >
+                  {label}
+                </Button>
+              </a>
             ))}
             <Button
               className="font-p"
